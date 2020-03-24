@@ -6,6 +6,11 @@ Users are strongly advised to upgrade to `json` 2.3.0 or later.
 
 For users who cannot upgrade their version of `json`, this gem (`json_cve_2020_10663`) monkey-patches your `json` version against against CVE-2020-10663.
 
+## Requirements
+
+- Ruby 1.8.7 or later
+- `json` 1.7.7 or later, but earlier than 2.3.0.
+
 ## Installation
 
 Add this line to your application's `Gemfile`:
