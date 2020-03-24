@@ -26,15 +26,23 @@ Or install it yourself as:
 $ gem install json_cve_2020_10663
 ```
 
-## Usage
-
-This gem monkey patches the `json` gem when it is required:
+Require the gem to patch the `json` gem:
 
 ```ruby
 require 'json_cve_2020_10663'
 ```
 
 Note that Rails automatically requires all gems in your `Gemfile` when your app is booted.
+
+You can verify that the patch was applied by running the following code from your application environment:
+
+```ruby
+JSON::GenericObject.json_creatable = true
+JSON('{"json_class":"JSON::GenericObject"}').class
+```
+
+If this returns `Hash`, the patch was applied correctly. If it returns `JSON::GenericObject`, the patch was not loaded.
+
 
 ## Development
 
